@@ -15,8 +15,8 @@ WindowAdd::~WindowAdd()
 
 void WindowAdd::on_AddVertexBut_clicked()
 {
-    QString s = ui->VertexEdit->text();
-    emit VertexAdded(data::Vertex<Elem>::create(Elem(s, "", "")));
+    QString h = ui->VertexEdit->text();
+    emit VertexAdded(data::Vertex<Elem>::create(Elem(h, "", "")));
 }
 
 void WindowAdd::on_pushButton_clicked()
