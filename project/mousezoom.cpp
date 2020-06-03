@@ -12,7 +12,6 @@ MouseZoom::MouseZoom(QGraphicsView* view)
   _modifiers = Qt::ControlModifier;
   _zoom_factor_base = 1.0015;
 }
-
 void MouseZoom::gentle_zoom(double factor) {
   _view->scale(factor, factor);
   _view->centerOn(target_scene_pos);
@@ -22,16 +21,13 @@ void MouseZoom::gentle_zoom(double factor) {
   _view->centerOn(_view->mapToScene(viewport_center.toPoint()));
   emit zoomed();
 }
-
 void MouseZoom::set_modifiers(Qt::KeyboardModifiers modifiers) {
   _modifiers = modifiers;
 
 }
-
 void MouseZoom::set_zoom_factor_base(double value) {
   _zoom_factor_base = value;
 }
-
 bool MouseZoom::eventFilter(QObject *object, QEvent *event) {
   if (event->type() == QEvent::MouseMove) {
     QMouseEvent* mouse_event = static_cast<QMouseEvent*>(event);
