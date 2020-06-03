@@ -42,25 +42,17 @@ private:
     void onGraphChanged(data::Graph<Elem> *graph);
 public slots:   
     void onVertexAdded(data::Vertex<Elem> *v);
-
     void onEdgeAdded(data::Edge<Elem> *e);
-    
+
     void onVertexDeleted(data::Vertex<Elem> *v);
-    
     void onEdgeDeleted(data::Edge<Elem> *e);
 private slots:
     void on_addItem_clicked();
-    
     void on_addEdge_clicked();
-    
     void on_Remove_clicked();
-    
     void on_GoalBox_currentTextChanged(const QString &arg1);
-    
     void on_ThemeBox_currentTextChanged(const QString &arg1);
-    
     void on_findWay_clicked();
-    
     void on_list_itemDoubleClicked(QListWidgetItem *item);
 };
 

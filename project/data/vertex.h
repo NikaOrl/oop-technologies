@@ -41,8 +41,9 @@ protected:
 public:
 
     static Vertex<T>* create(T value) {
-        Vertex<T> *v = Vertex<T>::getPool().createNewObject();
-        v->value = value;
+        //Vertex<T> *v = Vertex<T>::getPool().createNewObject();
+        Vertex<T> *v = new Vertex<T>(value);
+        //v->value = value;
         return v;
     }
 
