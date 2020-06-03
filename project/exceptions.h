@@ -4,7 +4,6 @@
 #include <iostream>
 #include <QString>
 using namespace std;
-
 namespace data {
 
 template <typename T>
@@ -60,7 +59,6 @@ public:
         arg1(e)
     {}
 };
-
 template<typename T>
 class InvalidArgument : public GraphException<T> {
 protected:
@@ -68,7 +66,6 @@ protected:
         GraphException<T>(g, "INVALID ARGUMENT: " + str)
     {}
 };
-
 template<typename T>
 class AddNullVertice : public InvalidArgument<T> {
 public:
@@ -98,7 +95,6 @@ protected:
         InvalidArgument<T>(g, "WHILE ADDING EDGE: " + str)
     {}
 };
-
 template<typename T>
 class AddEdgeToUnknownVertice : public AddEdgeWithInvalidVertice<T> {
 protected:
@@ -106,7 +102,6 @@ protected:
         AddEdgeWithInvalidVertice<T>(g, "UNKNOWN VERTICE: " + str + " argument is unknown vertice: " + v1)
     {}
 };
-
 template<typename T>
 class AddEdgeWithFirstUnknownVertice : public AddEdgeToUnknownVertice<T> {
 public:
@@ -117,7 +112,6 @@ public:
         arg1(e)
     {}
 };
-
 template<typename T>
 class AddEdgeWithSecondUnknownVertice : public AddEdgeToUnknownVertice<T> {
 public:
@@ -128,7 +122,6 @@ public:
         arg1(e)
     {}
 };
-
 template<typename T>
 class AddEdgeWithBothUnknownVertices : public AddEdgeToUnknownVertice<T> {
 public:
@@ -142,7 +135,6 @@ public:
         arg1(e)
     {}
 };
-
 template<typename T>
 class AddEdgeToNullVertice : public AddEdgeWithInvalidVertice<T> {
 protected:
@@ -161,7 +153,6 @@ public:
         arg1(e)
     {}
 };
-
 template<typename T>
 class AddEdgeWithSecondNullVertice : public AddEdgeToNullVertice<T> {
 public:
@@ -172,7 +163,6 @@ public:
         arg1(e)
     {}
 };
-
 template<typename T>
 class AddEdgeWithBothNullVertices : public AddEdgeToNullVertice<T> {
 public:
@@ -183,7 +173,6 @@ public:
         arg1(e)
     {}
 };
-
 }
 
 #endif // EXCEPTIONS_H
