@@ -15,7 +15,6 @@ public:
     ~GraphDbHelper() {
         sdb.close();
     }
-
     QList<data::Graph<Elem>*>* Read();
 
     void writeVert(data::Vertex<Elem> *v);
