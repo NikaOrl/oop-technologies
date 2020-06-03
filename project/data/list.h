@@ -150,7 +150,9 @@ public:
         }
         else if (first == last) {
             delete curr;
-            curr = first = last = nullptr;
+            curr = nullptr;
+            first = nullptr; 
+            last = nullptr;
         }
         else if (curr == last) {
             curr = curr->prev;

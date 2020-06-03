@@ -19,11 +19,17 @@ public:
     QList<data::Graph<Elem>*>* Read();
 
     void writeVert(data::Vertex<Elem> *v);
+
     void updateVert(data::Vertex<Elem> *v);
+
     void writeEdge(data::Edge<Elem> *e);
+
     void deleteEdge(data::Edge<Elem> *e);
+
     void deleteVert(data::Graph<Elem> *g, data::Vertex<Elem> *v);
+
     void writeGraph(QString name);
+
     void deleteGraph(data::Graph<Elem> * g);
 };
 
