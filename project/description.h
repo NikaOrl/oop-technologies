@@ -19,4 +19,4 @@ private:
     Ui::Description *ui;
 };
 
-#endif 
+#endif // DESCRIPTION_H
