@@ -18,6 +18,7 @@ public:
     ~WindowAdd();
 signals:
     void VertexAdded(data::Vertex<Elem> *v);
+
     void EdgeAdded(data::Edge<Elem> *e);
 
 

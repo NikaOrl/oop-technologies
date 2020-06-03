@@ -23,7 +23,6 @@ signals:
 
 private slots:
     void on_VertexDel_clicked();
-
     void on_EdgeDel_clicked();
 
 private:
