@@ -12,7 +12,6 @@ GraphDbHelper::GraphDbHelper()
            qDebug() << sdb.lastError().text();
     }
 }
-
 QList<data::Graph<Elem>*>* GraphDbHelper::Read()
 {
 
@@ -23,7 +22,6 @@ QList<data::Graph<Elem>*>* GraphDbHelper::Read()
         QString name = queryGraph.value(0).toString();
         g->push_back(new data::Graph<Elem>(name));
     }
-
     QSqlQuery queryVert;
     queryVert.exec("SELECT * FROM Vertices");
     while (queryVert.next())
@@ -38,7 +36,6 @@ QList<data::Graph<Elem>*>* GraphDbHelper::Read()
                 var->addVertex(data::Vertex<Elem>::create(Elem(display, name, cont)));
         }
     }
-
     QSqlQuery queryEdge;
     queryEdge.exec("SELECT * FROM Edges");
     while (queryEdge.next()) {
@@ -56,7 +53,6 @@ QList<data::Graph<Elem>*>* GraphDbHelper::Read()
 
     return g;
 }
-
 void GraphDbHelper::writeVert(data::Vertex<Elem> *v)
 {
     QSqlQuery vertQuery;
@@ -68,7 +64,6 @@ void GraphDbHelper::writeVert(data::Vertex<Elem> *v)
     vertQuery.bindValue(":Description", v->value.content);
     qDebug() << vertQuery.exec() << endl;
 }
-
 void GraphDbHelper::updateVert(data::Vertex<Elem> *v)
 {
     QSqlQuery vertQuery;
@@ -80,7 +75,6 @@ void GraphDbHelper::updateVert(data::Vertex<Elem> *v)
     vertQuery.bindValue(":graphName", v->value.graphName);
     qDebug() << vertQuery.exec() << endl;
 }
-
 void GraphDbHelper::writeEdge(data::Edge<Elem> *e)
 {
     QSqlQuery edgeQuery;
@@ -92,7 +86,6 @@ void GraphDbHelper::writeEdge(data::Edge<Elem> *e)
     edgeQuery.bindValue(":GraphName",e->graphName);
     qDebug() << edgeQuery.exec() << endl;
 }
-
 void GraphDbHelper::deleteVert(data::Graph<Elem> *g, data::Vertex<Elem> *v)
 {
     QSqlQuery query;
@@ -124,7 +117,6 @@ void GraphDbHelper::deleteVert(data::Graph<Elem> *g, data::Vertex<Elem> *v)
     }
 }
 
-
 void GraphDbHelper::deleteEdge(data::Edge<Elem> *e)
 {
     QSqlQuery query;
@@ -138,5 +130,3 @@ void GraphDbHelper::deleteEdge(data::Edge<Elem> *e)
                   "' AND GraphName='" + e->graphName +"';");
     qDebug() << query.exec();
 }
-
-
