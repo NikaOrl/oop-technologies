@@ -20,7 +20,6 @@ signals:
     void VertexDeleted(data::Vertex<Elem> *v);
     void EdgeDeleted(data::Edge<Elem> *e);
 
-
 private slots:
     void on_VertexDel_clicked();
 
