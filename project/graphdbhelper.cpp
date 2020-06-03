@@ -53,6 +53,7 @@ QList<data::Graph<Elem>*>* GraphDbHelper::Read()
                 var->addEdge(new data::Edge<Elem>(fromv, tov, graphName));
         }
     }
+
     return g;
 }
 
@@ -95,9 +96,11 @@ void GraphDbHelper::writeEdge(data::Edge<Elem> *e)
 void GraphDbHelper::deleteVert(data::Graph<Elem> *g, data::Vertex<Elem> *v)
 {
     QSqlQuery query;
+
     query.prepare("DELETE FROM Vertices WHERE Name='" + v->value.displayName +
                   "' AND GraphName='" + v->value.graphName +"';");
-    qDebug() << query.exec()
+    qDebug() << query.exec();
+
     for(auto item : *g->getEdges())
     {
         if(item->getFrom()->value.displayName == v->value.displayName)
