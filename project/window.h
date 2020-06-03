@@ -40,13 +40,12 @@ private:
     GraphDbHelper *helper;
 
     void onGraphChanged(data::Graph<Elem> *graph);
-public slots:   
+    public slots:   
     void onVertexAdded(data::Vertex<Elem> *v);
     void onEdgeAdded(data::Edge<Elem> *e);
-
     void onVertexDeleted(data::Vertex<Elem> *v);
     void onEdgeDeleted(data::Edge<Elem> *e);
-private slots:
+    private slots:
     void on_addItem_clicked();
     void on_addEdge_clicked();
     void on_Remove_clicked();
