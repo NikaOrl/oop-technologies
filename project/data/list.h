@@ -218,6 +218,11 @@ namespace data
                 next();
                 deleteBefore();
             }
+            else if (isEnd())
+            {
+                prev();
+                deleteAfter();
+            }
             else
             {
                 prev();
@@ -299,7 +304,14 @@ namespace data
                 }
                 curr = curr->next;
             }
-            return (curr->value == value);
+            if (curr->value == value)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         ListIterator<T> begin()
