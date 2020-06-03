@@ -12,7 +12,7 @@ class Pool
             T* instance;
             bool in_use;
         };
-
+    
         std::vector<PoolRecord> m_pool;
 
     public:
@@ -56,6 +56,5 @@ class Pool
                 delete m_pool[i].instance;
         }
 };
-
 
 #endif // POOL_H
